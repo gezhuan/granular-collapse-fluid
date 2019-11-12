@@ -151,17 +151,17 @@ int main(int argc, char **argv) try
         {
             for(size_t k=0;k<N_z;k++)
             {
-                Dom.AddSphere(-i-1,Vec3_t(2+2*R*i+0.5*R*(rand()/RAND_MAX),2+2*R*j++0.5*R*(rand()/RAND_MAX),2+2*R*k++0.5*R*(rand()/RAND_MAX)),R,3.0);
+                Dom.AddSphere(-i-1,Vec3_t(2+2*R*i+0.5*R*(rand()/RAND_MAX),2+2*R*j+0.5*R*(rand()/RAND_MAX),2+2*R*k+0.5*R*(rand()/RAND_MAX)),R,3.0);
             }
         }
     }
 
     //Dom.AddSphere(-1,Vec3_t(0.5*nx*dx,0.8*ny*dx,0.5*nz*dx),R,3.0);
     Dom.AddPlane(-N_x*N_y*N_z-1,Vec3_t(0.5*nx*dx,0,0.5*nz*dx),1,nx*dx,nz*dx,1,M_PI/2.0,&OrthoSys::e0);
-    Dom.AddPlane(-N_x*N_y*N_z-2,Vec3_t(0.5*nx*dx,0,nz*dx),1,nx*dx,ny*dx,1,0,&OrthoSys::e0);
-    Dom.AddPlane(-N_x*N_y*N_z-3,Vec3_t(0.5*nx*dx,0,0),1,nx*dx,ny*dx,1,0,&OrthoSys::e0);
-    Dom.AddPlane(-N_x*N_y*N_z-4,Vec3_t(0,0,0.5*nx*dx),1,nx*dx,ny*dx,1,M_PI/2.0,&OrthoSys::e1);
-    Dom.AddPlane(-N_x*N_y*N_z-5,Vec3_t(nx*dx,0,0.5*nx*dx),1,nx*dx,ny*dx,1,M_PI/2.0,&OrthoSys::e1);
+    Dom.AddPlane(-N_x*N_y*N_z-2,Vec3_t(0.5*nx*dx,0.5*ny*dx,nz*dx),1,nx*dx,ny*dx,1,0,&OrthoSys::e0);
+    Dom.AddPlane(-N_x*N_y*N_z-3,Vec3_t(0.5*nx*dx,0.5*ny*dx,0),1,nx*dx,ny*dx,1,0,&OrthoSys::e0);
+    Dom.AddPlane(-N_x*N_y*N_z-4,Vec3_t(nx*dx,0.5*ny*dx,0.5*nz*dx),1,nz*dx,ny*dx,1,M_PI/2.0,&OrthoSys::e1);
+    Dom.AddPlane(-N_x*N_y*N_z-5,Vec3_t(0,0.5*ny*dx,0.5*nz*dx),1,nz*dx,ny*dx,1,M_PI/2.0,&OrthoSys::e1);
     Dom.GetParticle(-N_x*N_y*N_z-2)->FixVeloc();
     Dom.GetParticle(-N_x*N_y*N_z-3)->FixVeloc();
     Dom.GetParticle(-N_x*N_y*N_z-1)->FixVeloc();
