@@ -18,12 +18,12 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>  #
 ########################################################################
 
-PROJECT                (MECHSYSSANDBOX)
+PROJECT                (COLUMN)
 CMAKE_MINIMUM_REQUIRED (VERSION 2.8)
-INCLUDE(${MECHSYSSANDBOX_SOURCE_DIR}/UseMECHSYS.cmake)
+INCLUDE(${COLUMN_SOURCE_DIR}/UseMECHSYS.cmake)
 
 SET(PROGS
-    test_spherefluidone
+    column
 )
 
 FOREACH(var ${PROGS})
